@@ -1,13 +1,10 @@
 package com.example.LoginRegistration.model;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
@@ -30,25 +27,17 @@ public class Student {
 	@Column(name = "image")
 	private String image;
 	
-	
-	private String session;
-	
-	//@OneToOne(fetch = FetchType.EAGER , cascade = CascadeType.ALL)
-	
+	@Column(name = "department")
 	private int department;
 	
-	private char status;
 	
 	public String getImage() {
 		return image;
 	}
 
-
 	public void setImage(String image) {
 		this.image = image;
 	}
-	
-	
 	
 	@Transient
 	public String getImagePath()
@@ -57,15 +46,12 @@ public class Student {
 			return null;
 		
 		return "/img/stuImg/"+id+"/"+image;
-		//return "/img/stuImg/10/roushan-min.jpeg";
-		//return ImagePath;
 	}
 
 	public Student()
 	{
 		
 	}
-	
 	
 	public Student(String firstName, String lastName, String email) {
 		super();
@@ -98,4 +84,18 @@ public class Student {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
+
+	/*
+	 * public int getDepartment() { return department; }
+	 * 
+	 * 
+	 * public void setDepartment(int department) { this.department = department; }
+	 * 
+	 * 
+	 * public char getStatus() { return status; }
+	 * 
+	 * 
+	 * public void setStatus(char status) { this.status = status; }
+	 */
 }

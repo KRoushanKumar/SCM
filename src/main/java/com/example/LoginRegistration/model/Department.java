@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "depatment")
+@Table(name = "department")
 public class Department {
 	
 	@Id
@@ -15,6 +15,13 @@ public class Department {
 	private long d_id;
 	
 	private String name;
+	private int ses_id;
+	public int getSes_id() {
+		return ses_id;
+	}
+	public void setSes_id(int ses_id) {
+		this.ses_id = ses_id;
+	}
 	private char status;
 	public Department(String name, char status) {
 		super();
